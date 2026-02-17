@@ -1,4 +1,4 @@
-package fonts
+package src
 
 import (
 	_ "embed"
@@ -14,13 +14,13 @@ const (
 	Thinkertoy FontType = "thinkertoy"
 )
 
-//go:embed standard.txt
+//go:embed fonts/standard.txt
 var standardStr string
 
-//go:embed shadow.txt
+//go:embed fonts/shadow.txt
 var shadowStr string
 
-//go:embed thinkertoy.txt
+//go:embed fonts/thinkertoy.txt
 var thinkertoyStr string
 
 func IsValidFont(inputFlag string) bool {

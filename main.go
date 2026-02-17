@@ -1,12 +1,12 @@
 package main
 
 import (
-	"ascii-art/fonts"
-	"ascii-art/src"
 	"flag"
 	"fmt"
 	"os"
 	"strings"
+
+	"ascii-art/src"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 	flag.Parse()
 	inputString := flag.Args()
 
-	if !fonts.IsValidFont(*fontFlag) {
+	if !src.IsValidFont(*fontFlag) {
 		fmt.Fprintln(os.Stderr, "Error: wrong font flag")
 		fmt.Fprintln(os.Stderr, "Valid fonts: standard, shadow, thinkertoy")
 		os.Exit(1)
@@ -24,7 +24,7 @@ func main() {
 		fmt.Fprintln(os.Stderr, "Usage: go run . \"INPUT STRING\"")
 		os.Exit(1)
 	}
-	fontData := fonts.GetReader(fonts.FontType(*fontFlag))
+	fontData := src.GetReader(src.FontType(*fontFlag))
 	fontMap, err := src.BuildFontMap(fontData)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Error parsing font map")
