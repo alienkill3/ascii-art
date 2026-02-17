@@ -1,0 +1,39 @@
+# AI Usage Index Log
+
+* **Tool/Model Used**: Gemini 3 Flash
+* **Date**: February 17, 2026
+* **What the user asked it**: Suggest additional unit and integration tests for a Go-based statistics CLI project (*math-skills*).
+
+---
+
+# AI Usage Index Log
+
+* **Tool/Model Used**: Gemini 3 Flash
+* **Date**: February 17, 2026
+* **What the user asked it**: Recommend efficient data representations for tetrominoes in a Go-based solver (*tetris-optimizer*) to optimize for comparison speed and validation.
+
+---
+
+# AI Usage Index Log
+
+* **Tool/Model Used**: Gemini 3 Flash
+* **Date**: February 17, 2026
+* **What the user asked it**: Explain the concept of recursive flood-fill and provide a Go implementation for validating tetromino connectivity.
+
+---
+
+# AI Usage Index Log
+
+* **Tool/Model Used**: Gemini 3 Flash
+* **Date**: February 17, 2026
+* **What the user asked it**: Demonstrate how to normalize tetromino coordinates to  to facilitate easier placement within a solver grid.
+
+---
+
+# AI Usage Index Log
+
+* **Tool/Model Used**: Gemini 3 Flash
+* **Date**: February 17, 2026
+* **What the user asked it**: Create a comprehensive log of all session prompts using the provided template.
+
+---

@@ -1,0 +1,89 @@
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to test specific error handling blocks inside a Run function using io.Reader and io.Writer.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to test a main function that uses os.Open, os.Args, and calls an external package logic.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to fix a test failure (panic/index out of range) when running a main function as a subprocess.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to parse command-line arguments and find a data file without using the standard flag package.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to specifically test the error return of an internal application function (stats.RunApp) within main.go.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: (Follow-up) Agreement to explore mocking and complex failure scenarios for the stats package.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to achieve 100% test coverage for the initial argument validation logic in main.go.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: To generate ASCII art characters for the Greek alphabet based on the style provided in a standard.txt file (8 lines height).
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to properly unit test Go flags, including the use of flag.FlagSet for isolation.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: Whether it is idiomatic to use Enums in Go for font constants and how to implement them.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to convert text files into binary data so the CLI program is self-contained and doesn't require external files at runtime.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: (Follow-up) How to verify and test that the embedded binary font data is loading correctly.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to map user input to ASCII font blocks and whether a map is the correct data structure for this.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to refactor the font mapping logic to use io.Reader instead of a raw string for better flexibility.
+
+Tool/Model Used: Gemini 3 Flash
+
+Date: February 17, 2026
+
+What the user asked it: How to detect terminal width in Go to prevent ASCII art banners from breaking or wrapping incorrectly.
