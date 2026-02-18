@@ -34,6 +34,11 @@ func TestMainProcess(t *testing.T) {
 			wantExit: 1,
 		},
 		{
+			name:     "valid input with new line",
+			args:     []string{"A\nB\nC"},
+			wantExit: 0,
+		},
+		{
 			name:     "not ascii",
 			args:     []string{"ψάρι"},
 			wantExit: 1,
