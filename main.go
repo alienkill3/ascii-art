@@ -24,6 +24,10 @@ func main() {
 		fmt.Fprintln(os.Stderr, "Usage: go run . \"INPUT STRING\"")
 		os.Exit(1)
 	}
+	if !src.IsValidAscii(inputString[0]) {
+		fmt.Fprintln(os.Stderr, "Error: found non ascii character")
+		os.Exit(1)
+	}
 	fontData := src.GetReader(src.FontType(*fontFlag))
 	fontMap, err := src.BuildFontMap(fontData)
 	if err != nil {

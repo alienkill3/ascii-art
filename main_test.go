@@ -30,7 +30,7 @@ func TestMainProcess(t *testing.T) {
 		},
 		{
 			name:     "invalid data",
-			args:     []string{"invalid/tdata"},
+			args:     []string{"invalid\tdata"},
 			wantExit: 1,
 		},
 		{
