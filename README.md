@@ -7,8 +7,9 @@ This project is a command-line tool written in **Go** that converts a given stri
 The program is executed through the terminal using the following command:
 
 ```bash
-go run . [-f banner_font] [INPUT_STRING]
+go run . [-f banner_font] 'INPUT_STRING'
 ```
+Keep in mind that you have to put your string inside single quotes or escape the special characters, ex. ``` '!@#' or \!\@\# ```
 
 *   **-f banner_font** (Optional): Specifies the banner template to use (**shadow**, **standard**, or **thinkertoy**). If omitted, it defaults to **standard**.
 *   **INPUT_STRING**: The text you want to convert. It supports uppercase and lowercase letters, numbers, spaces, special characters, and newline (`\n`) characters.

@@ -30,8 +30,13 @@ func TestMainProcess(t *testing.T) {
 		},
 		{
 			name:     "invalid data",
-			args:     []string{"invalid/tdata"},
+			args:     []string{"invalid\tdata"},
 			wantExit: 1,
+		},
+		{
+			name:     "valid input with new line",
+			args:     []string{"A\nB\nC"},
+			wantExit: 0,
 		},
 		{
 			name:     "not ascii",
