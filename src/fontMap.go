@@ -1,33 +1,37 @@
 package src
 
 import (
-	"bufio"
+	"fmt"
 	"io"
+	"strings"
 )
 
 func BuildFontMap(fontByte io.Reader) (map[rune][]string, error) {
-	fontMap := make(map[rune][]string)
-	b := bufio.NewScanner(fontByte)
+	// Read the entire font into memory at once
+	data, err := io.ReadAll(fontByte)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read font data: %w", err)
+	}
 
-	b.Scan()
+	lines := strings.Split(strings.ReplaceAll(string(data), "\r\n", "\n"), "\n")
 
-	// Starting with space (32)
+	fontMap := make(map[rune][]string, 95) // printable ASCII
 	currentChar := rune(32)
 
-	for {
-		var lines []string
-		for i := 0; i < 8; i++ {
-			if !b.Scan() {
-				return fontMap, nil
-			}
-			lines = append(lines, b.Text())
-		}
-		fontMap[currentChar] = lines
+	// skip header line if present
+	lineIndex := 1
+
+	for lineIndex+7 < len(lines) {
+		charLines := lines[lineIndex : lineIndex+8] // 8 lines per character
+		fontMap[currentChar] = charLines
 		currentChar++
-		// end of ascii character
-		if !b.Scan() {
-			break
-		}
+		lineIndex += 9 // 8 lines + 1 empty line separator
 	}
-	return fontMap, b.Err()
+
+	// sanity check
+	if currentChar <= 126 {
+		return fontMap, fmt.Errorf("font file ended prematurely; last char = %c", currentChar-1)
+	}
+
+	return fontMap, nil
 }

@@ -6,7 +6,7 @@ The primary use case is for a user to generate large, stylized ASCII text in a t
 
 ### 3. CLI Contract
 The program is executed through the terminal using the Go command:
-`go run . -f banner_font INPUT_STRING`.
+`go run . [-f] [banner font] [INPUT STRING]`.
 The flag `-f` is optional, the default banner font will be `standard`, if the flag is omitted.
 
 ### 4. Functional Requirements (Rules)

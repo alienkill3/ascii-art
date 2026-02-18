@@ -32,8 +32,8 @@ func main() {
 	}
 
 	// split the user input by \n and print the words
-	words := strings.SplitSeq(inputString[0], "\\n")
-	for word := range words {
+	words := strings.Split(inputString[0], "\\n")
+	for _, word := range words {
 		if word == "" {
 			fmt.Println()
 			continue
