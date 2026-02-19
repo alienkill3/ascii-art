@@ -12,22 +12,30 @@ import (
 func main() {
 	fontFlag := flag.String("f", "standard", "banner ASCII font")
 	flag.Parse()
-	inputString := flag.Args()
+	inputArgs := flag.Args()
 
 	if !src.IsValidFont(*fontFlag) {
 		fmt.Fprintln(os.Stderr, "Error: wrong font flag")
 		fmt.Fprintln(os.Stderr, "Valid fonts: standard, shadow, thinkertoy")
 		os.Exit(1)
 	}
-	if len(inputString) != 1 {
+
+	if len(inputArgs) != 1 {
 		fmt.Fprintln(os.Stderr, "Error: wrong arguments")
 		fmt.Fprintln(os.Stderr, "Usage: go run . \"INPUT STRING\"")
 		os.Exit(1)
 	}
-	if !src.IsValidAscii(inputString[0]) {
+
+	input := inputArgs[0]
+	if input == "" {
+		return
+	}
+
+	if !src.IsValidAscii(input) {
 		fmt.Fprintln(os.Stderr, "Error: found non ascii character")
 		os.Exit(1)
 	}
+
 	fontData := src.GetReader(src.FontType(*fontFlag))
 	fontMap, err := src.BuildFontMap(fontData)
 	if err != nil {
@@ -35,30 +43,18 @@ func main() {
 		os.Exit(1)
 	}
 
-	s := inputString[0]
-	if s == "" {
-		return
+	parts := strings.Split(input, "\\n")
+
+	// Ignore trailing "\n" (it should not create an extra empty output block)
+	if len(parts) > 0 && parts[len(parts)-1] == "" {
+		parts = parts[:len(parts)-1]
 	}
 
-	str := inputString[0]
-	if str == "" {
-		return
-	}
-
-	words := strings.Split(str, "\\n")
-	if len(words) > 0 && words[len(words)-1] == "" {
-		words = words[:len(words)-1]
-	}
-
-	for i, word := range words {
-		if word == "" {
+	for _, p := range parts {
+		if p == "" {
 			fmt.Println()
-		} else {
-			src.PrintBanner(word, fontMap)
+			continue
 		}
-		if i < len(words)-1 {
-			fmt.Println()
-		}
+		src.PrintBanner(p, fontMap)
 	}
-
 }

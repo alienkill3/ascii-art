@@ -77,12 +77,16 @@ func TestMainProcess(t *testing.T) {
 	}
 }
 
-// This is the "helper" that actually runs your main logic.
-// It is called by the exec.Command above.
+// Helper process that runs the real main() for integration tests.
 func TestActualMain(t *testing.T) {
+	// Run only when invoked as helper process
 	if os.Getenv("GO_WANT_HELPER_PROCESS") != "1" {
 		return
 	}
-	// Call the real main
+
+	// Execute CLI logic
 	main()
+
+	// Exit immediately to avoid printing "PASS" to stdout
+	os.Exit(0)
 }
