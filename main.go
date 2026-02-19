@@ -35,13 +35,30 @@ func main() {
 		os.Exit(1)
 	}
 
-	// split the user input by \n and print the words
-	words := strings.Split(inputString[0], "\\n")
-	for _, word := range words {
+	s := inputString[0]
+	if s == "" {
+		return
+	}
+
+	str := inputString[0]
+	if str == "" {
+		return
+	}
+
+	words := strings.Split(str, "\\n")
+	if len(words) > 0 && words[len(words)-1] == "" {
+		words = words[:len(words)-1]
+	}
+
+	for i, word := range words {
 		if word == "" {
 			fmt.Println()
-			continue
+		} else {
+			src.PrintBanner(word, fontMap)
 		}
-		src.PrintBanner(word, fontMap)
+		if i < len(words)-1 {
+			fmt.Println()
+		}
 	}
+
 }
